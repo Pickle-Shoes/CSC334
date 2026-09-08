@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            p{
+                color: red;
+                text-decoration: underline;
+            }
+
+            /* article p is more specific and defined than p, so it overrides any changes p made in that section */
+
+            article p{
+                color: blue;
+            }
+            /* . is a specifier for class, etc */
+            .help-text{
+                color: orange;
+            }
+            .other-class{
+                text-decoration: none;
+            }
+
+        </style>
+
 
     </head>
     <body>
@@ -11,8 +32,19 @@
                 </ul>
             </nav>
         </header>
+        <div>
         <h1>Hello!</h1>
         <h6>Hello!</h6>
         <p>Hello!</p>
+        <p>Hello!</p>
+        <p>Hello!</p>
+        <article>
+            <p>Hello!</p>
+            <p>Hello!</p>
+        </article>
+        <!-- help-text and other-class are two seperate classes and can be altered differently in css -->
+        <p class ="help-text other-class">Hello!</p>
+        </div>
+
     </body>
 </html>
