@@ -1,0 +1,10 @@
+img{
+    width: 300px;
+}
+
+div{
+    display: flex;
+    align-items: center;
+    gap:15px;
+}
+

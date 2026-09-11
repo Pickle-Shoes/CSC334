@@ -6,14 +6,28 @@
 
         <style>
             /* Styling will go here */
-            p{
-                color: slategray;
+            div{
+                display: flex;
+                align-items: center;
+                gap: 15px;                
+            }
+
+            .text{
+                color: yellow;
+                border: 2px solid black;
+                background-color: blueviolet;
             }
 
             img{
                 border-radius: 50%;
                 width: 150px;
                 height: 200px;
+            }
+
+            nav{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
             }
 
         </style>
@@ -28,13 +42,13 @@
         </header>
         <div>
             <img src="vikingslogo.png" alt="The logo for the Minnesota Vikings">
-        </div>
-        <p>
+            <p  class="text">
             One of my favorite hobbies is watching football, and basketball. In the NFL my favorite team is the Vikings
             and in the NBA it is the Timberwolves. I am extremely excited for each of those seasons to begin. 
             I am hopeful that each team is going to do well this season. Aside from sports, I love watching movies,
             playing video games, playing ping pong, going on walks, and listening to music.
-        </p>
+            </p>
+        </div> 
 
 
     </body>
