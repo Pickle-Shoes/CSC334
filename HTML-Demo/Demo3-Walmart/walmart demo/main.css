@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+}
+
+header img {
+    width: 50px;
+}
+
+header>div {
+    background-color:cornflowerblue;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#search-icon {
+    background-color: white;
+    height: 40px;
+    width: 700px;
+    border-radius: 10px;
+    color: gray;
+}
+
+.pickup{
+    display: flex;
+    background-color: blue;
+    padding: 10px;
+    justify-content: center;
+}
+
+
+nav{
+    background-color: aliceblue;
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+nav li{
+    display: inline;
+    margin: 0 10px;
+}
