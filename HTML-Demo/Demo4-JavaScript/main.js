@@ -20,12 +20,48 @@ array.foreach((element) => {
 
 })
 
-//object defenition
+function newEmployee(firstName, lastName, dob){
+    const employee = {
+        firstName: firstName,
+        lastName: lastName,
+        dob: dob,   
+        fullName: function (){
+        //return this.firstName + " " + this.lastName  -- bad syntax using +
+        return `${this.firstName} ${this.lastName}` //better syntax using template strings
+        },
+        greeting: function(){
+    
+        },
+        age: function(){
+            return this.dob / 4 
+        }
+
+    }
+    return employee
+}
+print(employee.fullName())
+
+//object definition
+/*
 const employee = {
     firstName: "John",
     lastName: "Smith",
-    dob: 12345678
+    dob: 12345678,
+    fullName: function (){
+        //return this.firstName + " " + this.lastName  -- bad syntax using +
+        return `${this.firstName} ${this.lastName}` //better syntax using template strings
+    },
+    greeting: function(){
+    
+    },
+    age: function(){
+        return this.dob / 4 
+    }
+
 }
+*/
+
+employee.firstName.toLocaleUpperCase()
 
 
 function doStuff(options = {}){
