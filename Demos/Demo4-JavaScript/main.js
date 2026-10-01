@@ -39,7 +39,7 @@ function newEmployee(firstName, lastName, dob){
     }
     return employee
 }
-print(employee.fullName())
+console.log(employee.fullName())
 
 //object definition
 /*
