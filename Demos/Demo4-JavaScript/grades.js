@@ -7,7 +7,7 @@ const students = [
     },
     {
         name: "Alice",
-        grades: [87, 67, 99, 66],
+        grades: [35, 88, 76, 45],
     },
     {
         name: "Bob",
@@ -50,13 +50,12 @@ function stduentAverage(){
         average = calculateLetterGrade(average / student.grades.length)
         console.log(student.name + ":", average)
     });
-    // totalAverage = totalAverage / students.length
     totalAverage = totalAverage / numOfGrades
     console.log("Total Student average:", totalAverage.toFixed(2))
 }
 
+//calculate course average, print number
 stduentAverage()
 
-//calculate course average, print number
 
 
