@@ -11,6 +11,8 @@ nav{
     padding: 5px;
 }
 
+
+
 .nav-links{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -25,7 +27,6 @@ nav{
 .nav-links a{
     color:white;
     text-decoration: none;
-
 }
 
 .main-boxes{
