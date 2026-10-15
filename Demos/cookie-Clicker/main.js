@@ -1,10 +1,12 @@
 const cookie = document.getElementById("cookie")
 const moneyElement = document.getElementById("money")
 const levelElement = document.getElementById("level")
+const multiplierElement = document.getElementById("multiplier")
 const shop = document.getElementById("shop")
 
 let money = 0
 let level = 0
+let multiplier = 1
 
 const items =
 [{
@@ -13,6 +15,7 @@ const items =
     level: 5,
     element: null,
     purchased: false,
+    multiplier: 2,
 },
 {
     title: "Coolio",
@@ -20,7 +23,28 @@ const items =
     level: 1, 
     element: null,
     purchased: false,
-}]
+    multiplier: 3,
+},
+{
+    title: "Coolest Item",
+    price: 100,
+    level: 20, 
+    element: null,
+    purchased: false,
+    multiplier: 5,
+    clickRate: 1000,
+}
+]
+
+//generate random number for bonus chance
+//Math.random()
+//bonus element show up
+//if they clck then add money and remove it
+//after a few seconds it goes away
+
+
+
+
 
 //add all items to shop, then use css for locked items
 items.forEach((item) => {
@@ -34,22 +58,29 @@ items.forEach((item) => {
     <p>Unlocks at level ${item.level}</p>
     `
 
-    item.onclick = () =>{
+    element.onclick = () =>{
         //make sure they can buy it
         if(money >= item.price && item.purchased == false){
             money = money - item.price
-            money.innerText = `$${money}`
+            moneyElement.innerText = `$${money}`
 
             //mark as purchased in data
             item.purchased = true
             //update ui to show its purchased
             item.element.classList.add("purchased")
+            multiplier = multiplier * item.multiplier
+            multiplierElement.innerText = multiplier
         }
         else{
             return
         }
     }
 
+    if(item.clickRate != undefined){
+        setInterval(() => {
+            cookie.click()
+        }, item.clickRate)
+    }
     element.classList.add("locked", "item")
     item.element = element
     shop.append(element)
@@ -58,7 +89,7 @@ items.forEach((item) => {
 
 cookie.onclick = () =>
 {
-    money++
+    money = money + multiplier
     level++
 
     //loop through all items, add if newly available
