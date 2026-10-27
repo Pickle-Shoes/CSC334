@@ -41,8 +41,30 @@ const items =
 //bonus element show up
 //if they clck then add money and remove it
 //after a few seconds it goes away
+//element.after(newElement)
+//element.remove()
 
+function bonus() {
+    let num = Math.random() * 100
+    if(num >= 95){
+        bonus = document.createElement("p")
+        bonus.innerText = "CLICK ME"
+        bonus.classList.add("bonus")
+        cookie.after(bonus)
 
+        const timeout = setTimeout(() => {
+            bonus.remove
+        }, 2500);
+
+        bonus.onclick = () =>{
+            money += 50 * multiplier
+            moneyElement.innerText = `$${money}`
+            clearTimeout(timeout)
+            bonus.remove()
+        }
+    }
+    return
+}
 
 
 
@@ -91,7 +113,7 @@ cookie.onclick = () =>
 {
     money = money + multiplier
     level++
-
+    bonus()
     //loop through all items, add if newly available
     //remove all items, loop and add eligible
 
