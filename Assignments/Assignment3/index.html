@@ -2,11 +2,34 @@
 
 <html>
     <head>
-
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <script src="main.js" defer></script>
+        <title>To Do List</title>
     </head>
 
     <body>
-        
+        <h1>To Do List</h1>
+        <div class="to-do">
+            <ul id="to-do">
+                <!-- store list elements here add them through JS  -->
+                 <!-- <li>
+                    <div class="item">
+                        <p>Description of to-do</p>
+                        <button id="increase-priority">Increase Priority</button>
+                        <button id="decrease-priority">Decrease Priority</button>
+                    </div>
+                 </li> -->
+            </ul>
+
+            <div class="adding">
+                <div id="input-box">
+                    <label for="input-text">To-dos:</label>
+                    <input type="text" id="input-text" name="text-input" placeholder="Enter your to-dos">
+                </div>
+                <button id="add-item">Add Item</button>
+            </div>
+            
+        </div>
     </body>
 
 </html>
