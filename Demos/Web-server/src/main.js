@@ -65,9 +65,9 @@ app.listen(3000)
 
 //SELECT * FROM users WHERE email = 'a@b.c';
 
-const email = "a@b.c'; DROP TABLE users"
+//const email = "a@b.c'; DROP TABLE users"
 
 
 //prepared statement to procect against sql injection -- $1 tells sql we are inputting a value and will not treat the inputted value as sql commands
-exec("SELECT * FROM users WHERE email = $1")
+//exec("SELECT * FROM users WHERE email = $1")
 
