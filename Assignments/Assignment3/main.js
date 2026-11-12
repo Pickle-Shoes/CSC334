@@ -11,6 +11,7 @@ add_button.onclick = () =>
 
     if(description) //make sure description is not empty or blank
     {
+        //define parts I will be adding to the list
         const listItem = document.createElement("li");
         const element = document.createElement("div");
         const h2 = document.createElement("h2");
