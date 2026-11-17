@@ -1,5 +1,6 @@
 const express = require("express")
 const dbloader = require("better-sqlite3")
+const e = require("express")
 
 const db = dbloader("data.db") //path is relative to node or the root of our project
 
@@ -35,17 +36,41 @@ app.post("/api/users", (req, res) =>{
     // const username = req.params.username
 
     //input validation goes here
+    if (!req.body || !req.body.email){
+        res.sendStatus(400)
+        return
+    }
 
-    const data = db.prepare("INSERT INTO users (email, username) VALUES ($email, $username)")
+    try{
+        //error prone code 
+        //code that relies on that
+        
+        const data = db.prepare("INSERT INTO users (email, username) VALUES ($email, $username)")
         .run({
             email: req.body.email,
             username: req.body.username
         })
-
         
-    res.sendStatus(200)
+        const user = db.prepare("SELECT * FROM users WHERE id = ?")
+        .get(data.lastInsertRowid)        
+        
+        
+        if(!user){
+            res.sendStatus(404)
+        }else{
+            res.send(user)
+        }
+    } catch(err){
+        console.log(err)
+    
+        if(err.code == "SQLITE_CONSTRAINT_UNIQUE"){
+            res.status(400).send("resource already exists")
+        }else{
+            res.sendStatus(500)
+        }
+    }
 })
-
-
-
-app.listen(3000)
+    
+    
+    
+    app.listen(3000)
