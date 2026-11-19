@@ -6,6 +6,7 @@ const db = dbloader("data.db") //path is relative to node or the root of our pro
 
 const app = express()
 app.use(express.json())
+app.use(express.static("src/public"))
 
 app.get("/api/users/:id", (req, res) => {
     const id = parseInt(req.params.id)
@@ -73,4 +74,13 @@ app.post("/api/users", (req, res) =>{
     
     
     
-    app.listen(3000)
+app.listen(3000)
+
+
+// fetch().then((data) => {
+//     console.log(1)
+// }).catch((err) => {
+    
+// })
+
+// console.log(2)
